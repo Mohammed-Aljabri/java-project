@@ -1,45 +1,63 @@
-package com.example;
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+package main.java.com.example;
 
-public class Book {
-    private String title;
+/**
+ * A class representing a book in a library.
+ * Extends the LibraryItem class and includes additional properties for the book's name, author, and price.
+ */
+public class Book extends LibraryItem {
+    private String name;
     private String author;
-    private int year;
-    private boolean borrowed;
+    private double price;
 
-    public Book(String title, String author, int year) {
-        this.title = title;
+    /**
+     * Constructs a new Book object with the specified ID, name, author, and price.
+     * @param id the ID of the book
+     * @param name the name of the book
+     * @param author the author of the book
+     * @param price the price of the book
+     */
+    public Book(int id, String name, String author, double price) {
+        super(id);
+        this.name = name;
         this.author = author;
-        this.year = year;
-        this.borrowed = false;
+        this.price = price;
     }
 
-    public String getTitle() {
-        return this.title;
+    /**
+     * Returns the name of the book.
+     * @return the name of the book
+     */
+    public String getName() {
+        return name;
     }
 
+    /**
+     * Returns the author of the book.
+     * @return the author of the book
+     */
     public String getAuthor() {
-        return this.author;
+        return author;
     }
 
-    public int getYear() {
-        return this.year;
+    /**
+     * Returns the price of the book.
+     * @return the price of the book
+     */
+    public double getPrice() {
+        return price;
     }
 
-    public boolean isBorrowed() {
-        return this.borrowed;
-    }
-
-    public void setBorrowed(boolean borrowed) {
-        this.borrowed = borrowed;
-    }
-
+    /**
+     * Returns a string representation of the Book object, including the ID, name, author, and price.
+     * @return a string representation of the Book object
+     */
+    @Override
     public String toString() {
-        String status = this.borrowed ? "borrowed" : "available";
-        return this.title + " by " + this.author + " (" + this.year + ") - " + status;
+        return "Book { " +
+                "The Book id is: " + getId() +
+                " || " + "The Name Of The Book Is: " + name +  
+                " || " + "The Author Of The Book Is:" + author +       
+                " || " + "The Price: " + price +
+            " }" ;
     }
 }
