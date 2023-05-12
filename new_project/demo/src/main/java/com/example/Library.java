@@ -11,31 +11,39 @@ public class Library {
 
     String splitter = ",";
 
+    /**
+     * Loads book data from a file and adds it to the book list.
+     */
     public void loadBooksToList() {
-        // use split
         String data = FileHandler.read();
-        /*
-            data = "1111,sss,sss,111.0\n
-                    222,ddd,ddd,222.0\n"
-        */
-        String[] lines = data.split("\n"); // = {"1111,sss,sss,111.0", "222,ddd,ddd,222.0"}
+
+        String[] lines = data.split("\n");
         for (int i = 0; i < lines.length; i++) {
-            String line = lines[i]; // "1111,sss,sss,111.0"
-            String[] parts = line.split(splitter); // = {"1111", "sss", "sss", "111.0"}
+            String line = lines[i];
+            String[] parts = line.split(splitter);
+
+            // Create a new book object from the fields and add it to the book list.
             Book book = new Book(Integer.parseInt(parts[0]), parts[1], parts[2], Double.parseDouble(parts[3]));
             books.add(book);
         }
     }
+   
+    /**
+     * Saves the book data in the book list to a file.
+     */
     public void saveBooksToFile() {
         String data = "";
-        for (int i= 0; i < books.size(); i++) {
+        for (int i = 0; i < books.size(); i++) {
             Book element = books.get(i);
-            // String data = element.getId() + splitter + element.getName() + 
-            data +=  String.join(splitter, Integer.toString(element.getId()), element.getName(), element.getAuthor(), Double.toString(element.getPrice())) + "\n";
 
-            FileHandler.write(data);
+            // Join the book fields with the splitter and add a newline character.
+            data += String.join(splitter, Integer.toString(element.getId()), element.getName(), element.getAuthor(), Double.toString(element.getPrice())) + "\n";
         }
+
+        // Write the data to the file.
+        FileHandler.write(data);
     }
+
 
     /**
      * Adds a book to the library.

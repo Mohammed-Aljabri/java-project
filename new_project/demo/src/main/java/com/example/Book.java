@@ -53,11 +53,11 @@ public class Book extends LibraryItem {
      */
     @Override
     public String toString() {
-        return "Book { " +
+        return  "{ "   +
                 "The Book id is: " + getId() +
                 " || " + "The Name Of The Book Is: " + name +  
                 " || " + "The Author Of The Book Is:" + author +       
-                " || " + "The Price: " + price +
+                " || " + "The Price: " + price + "$" +
             " }" ;
     }
 }
