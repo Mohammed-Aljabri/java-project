@@ -58,7 +58,7 @@ public class LibrarySystem {
                             break;
                         case 3:
                             library.displayBooks();
-                            
+
                             break;
                         case 4:
                             System.out.print("Enter book name: ");
@@ -75,12 +75,12 @@ public class LibrarySystem {
                     System.out.println("whoops Something Went Wrong Please Try Again");
                     scanner.nextLine(); // consume the rest of the line to clear the input buffer
                 }
-                
+
             } while (choice != 5);
             scanner.close();
 
         }
-        
+
     }
 
 }

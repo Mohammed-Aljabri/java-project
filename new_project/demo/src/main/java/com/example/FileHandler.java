@@ -21,7 +21,8 @@ public class FileHandler {
         try {
             File myObj = new File(filePath);
             if (myObj.createNewFile()) {
-                FileHandler.write("011,QWE,QWE,22");
+                FileHandler.write(
+                        "11101,JAVA: an introduction to problem-solving and programming,Walter Savitch Philadelphia,84");
             }
         } catch (IOException e) {
             // An error occurred while creating the file.
@@ -54,7 +55,8 @@ public class FileHandler {
     }
 
     /**
-     * Writes data to the file at the specified file path, overwriting any existing data.
+     * Writes data to the file at the specified file path, overwriting any existing
+     * data.
      *
      * @param data The data to be written to the file.
      */
