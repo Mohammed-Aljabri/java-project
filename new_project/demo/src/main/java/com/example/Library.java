@@ -27,7 +27,7 @@ public class Library {
             books.add(book);
         }
     }
-   
+
     /**
      * Saves the book data in the book list to a file.
      */
@@ -37,16 +37,17 @@ public class Library {
             Book element = books.get(i);
 
             // Join the book fields with the splitter and add a newline character.
-            data += String.join(splitter, Integer.toString(element.getId()), element.getName(), element.getAuthor(), Double.toString(element.getPrice())) + "\n";
+            data += String.join(splitter, Integer.toString(element.getId()), element.getName(), element.getAuthor(),
+                    Double.toString(element.getPrice())) + "\n";
         }
 
         // Write the data to the file.
         FileHandler.write(data);
     }
 
-
     /**
      * Adds a book to the library.
+     * 
      * @param book the book to add
      */
     public void addBook(Book book) {
@@ -56,6 +57,7 @@ public class Library {
 
     /**
      * Removes a book from the library based on its ID.
+     * 
      * @param id the ID of the book to remove
      * @return true if the book was successfully removed, false otherwise
      */
@@ -86,8 +88,10 @@ public class Library {
 
     /**
      * Searches for books in the library based on their name.
+     * 
      * @param name the name of the book to search for
-     * @return a list of all books with the specified name, or an empty list if no books are found
+     * @return a list of all books with the specified name, or an empty list if no
+     *         books are found
      */
     public List<Book> searchBook(String name) {
         boolean found = false;
