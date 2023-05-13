@@ -16,7 +16,7 @@ public class Library {
      */
     public void loadBooksToList() {
         String data = FileHandler.read();
-
+       
         String[] lines = data.split("\n");
         for (int i = 0; i < lines.length; i++) {
             String line = lines[i];

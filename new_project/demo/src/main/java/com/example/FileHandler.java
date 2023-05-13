@@ -21,7 +21,7 @@ public class FileHandler {
         try {
             File myObj = new File(filePath);
             if (myObj.createNewFile()) {
-                // File created successfully.
+                FileHandler.write("011,QWE,QWE,22");
             }
         } catch (IOException e) {
             // An error occurred while creating the file.
